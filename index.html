@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test calculator</title>
+	<style type="text/css">
+		body, html, * {
+			margin: 0;
+			padding: 0;
+		}
+		.wrapper {
+			width: 400px;
+			margin-top: 100px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.display {
+			font-size:32px;
+			width: 100%;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			background: #EEE;
+			text-align: right;
+			color: #444;
+		}
+		.buttonWrapper {
+			width: 100%;
+		}
+		.leftBtns {
+			width: 300px; float: left;
+		}
+		.rightBtns {
+			width: 100px; float: left;	
+		}
+		.btn {
+			
+		    padding: 41px;
+		    font-size: 28px;
+		    display: block;
+		    background: #eee;
+		    float: left;
+		    text-decoration: none;
+		    border: 1px solid #ddd;
+		}
+		.btn:hover {
+			background: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<p class="display" id="display">2563.25</p>
+		<div class="buttonWrapper">
+			<div class="leftBtns">
+				<a href="#" class="btn">7</a>
+				<a href="#" class="btn">8</a>
+				<a href="#" class="btn">9</a>
+				<a href="#" class="btn">4</a>
+				<a href="#" class="btn">5</a>
+				<a href="#" class="btn">6</a>
+				<a href="#" class="btn">1</a>
+				<a href="#" class="btn">2</a>
+				<a href="#" class="btn">3</a>
+			</div>
+			<div class="rightBtns">
+				<a href="#" class="btn">+</a>
+				<a href="#" class="btn">-</a>
+				<a href="#" class="btn">=</a>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		document.getElementById('display').innerHTML = "0";
+		var elements = document.getElementsByClassName('btn')
+		
+		for(var i = 0; i<elements.length; i++){
+			elements[i].addEventListener('click', clicked)
+		}
+
+		function clicked(e) {
+			var item = e.target.innerHTML;
+			var currentValue = document.getElementById('display').innerHTML;
+			switch(item) {
+				case '+':
+					break;
+				case '-':
+					break;
+				case '=':
+					break;
+				default:
+					currentValue = parseInt(currentValue) + item
+			}
+			document.getElementById('display').innerHTML = currentValue
+		}
+	</script>
+</body>
+</html>
